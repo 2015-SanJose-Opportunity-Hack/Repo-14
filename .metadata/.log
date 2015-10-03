@@ -1,0 +1,97 @@
+!SESSION 2015-10-03 14:20:00.356 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_40
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/vipulkanade/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/vipulkanade/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.m2e.logback.configuration 2 0 2015-10-03 14:21:58.155
+!MESSAGE Exception while setting up logging:org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+!STACK 0
+java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+	at org.eclipse.m2e.logback.configuration.LogHelper.logJavaProperties(LogHelper.java:26)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:189)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+
+!ENTRY org.eclipse.core.net 1 0 2015-10-03 14:22:03.026
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jface 2 0 2015-10-03 14:22:03.817
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-10-03 14:22:03.817
+!MESSAGE A conflict occurred for ALT+COMMAND+C:
+Binding(ALT+COMMAND+C,
+	ParameterizedCommand(Command(de.bastiankrol.startexplorer.copyResourcePathToClipboardFromResourceView,Copy Resource Path to Clipboard,
+		Copies the path of the resource to the clipboard,
+		Category(de.bastiankrol.startexplorer.commands.category,StartExplorer,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2f8b48c3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+COMMAND+C,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.modify.method.parameters,Change Method Signature,
+		Change method signature includes parameter names and parameter order,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2af31aba,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+
+!ENTRY org.eclipse.debug.ui 4 120 2015-10-03 14:22:20.973
+!MESSAGE org.eclipse.debug.ui.toggleBreakpointsTargetFactory extension failed to load breakpoint toggle target because the specified id is already registered.  Specified ID is: org.chromium.debug.ui.ChromiumToggleBreakpointTargetFactory
+
+!ENTRY org.nodeclipse.ui 1 0 2015-10-03 14:24:20.125
+!MESSAGE RelativityFileSystemStructureProvider.cllectFiles() called. file count=6
+
+!ENTRY org.nodeclipse.ui 1 0 2015-10-03 14:24:20.150
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=/var/folders/21/_718x9g14d1819lrkz61bn940000gn/T/express-work/1443907458604/Opportunity_Fund_Team_14/app.js
+
+!ENTRY org.nodeclipse.ui 1 0 2015-10-03 14:24:20.161
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=/var/folders/21/_718x9g14d1819lrkz61bn940000gn/T/express-work/1443907458604/Opportunity_Fund_Team_14/package.json
+
+!ENTRY org.nodeclipse.ui 1 0 2015-10-03 14:24:20.164
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=/var/folders/21/_718x9g14d1819lrkz61bn940000gn/T/express-work/1443907458604/Opportunity_Fund_Team_14/public/stylesheets/style.css
+
+!ENTRY org.nodeclipse.ui 1 0 2015-10-03 14:24:20.166
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=/var/folders/21/_718x9g14d1819lrkz61bn940000gn/T/express-work/1443907458604/Opportunity_Fund_Team_14/routes/index.js
+
+!ENTRY org.nodeclipse.ui 1 0 2015-10-03 14:24:20.167
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=/var/folders/21/_718x9g14d1819lrkz61bn940000gn/T/express-work/1443907458604/Opportunity_Fund_Team_14/routes/user.js
+
+!ENTRY org.nodeclipse.ui 1 0 2015-10-03 14:24:20.169
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=/var/folders/21/_718x9g14d1819lrkz61bn940000gn/T/express-work/1443907458604/Opportunity_Fund_Team_14/views/index.ejs
+
+!ENTRY org.nodeclipse.ui 1 0 2015-10-03 14:24:20.295
+!MESSAGE templateRoot: /Volumes/MacSSHD/Development_IDE_Environments/eclipse_ee_luna/configuration/org.eclipse.osgi/950/0/.cp/templates/common-templates
+
+!ENTRY org.nodeclipse.ui 1 0 2015-10-03 14:24:20.296
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=/Volumes/MacSSHD/Development_IDE_Environments/eclipse_ee_luna/configuration/org.eclipse.osgi/950/0/.cp/templates/common-templates/.jshintrc
+
+!ENTRY org.nodeclipse.ui 1 0 2015-10-03 14:24:20.307
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=/Volumes/MacSSHD/Development_IDE_Environments/eclipse_ee_luna/configuration/org.eclipse.osgi/950/0/.cp/templates/common-templates/.settings/.jsdtscope
+
+!ENTRY org.nodeclipse.ui 1 0 2015-10-03 14:24:20.310
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=/Volumes/MacSSHD/Development_IDE_Environments/eclipse_ee_luna/configuration/org.eclipse.osgi/950/0/.cp/templates/common-templates/.settings/com.eclipsesource.jshint.ui.prefs
+
+!ENTRY org.nodeclipse.ui 1 0 2015-10-03 14:24:25.438
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=/Volumes/MacSSHD/Development_IDE_Environments/eclipse_ee_luna/configuration/org.eclipse.osgi/950/0/.cp/templates/common-templates/.settings/org.eclipse.wst.jsdt.core.prefs
+
+!ENTRY org.nodeclipse.ui 1 0 2015-10-03 14:24:25.450
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=/Volumes/MacSSHD/Development_IDE_Environments/eclipse_ee_luna/configuration/org.eclipse.osgi/950/0/.cp/templates/common-templates/.settings/org.eclipse.wst.jsdt.ui.superType.container
+
+!ENTRY org.nodeclipse.ui 1 0 2015-10-03 14:24:25.452
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=/Volumes/MacSSHD/Development_IDE_Environments/eclipse_ee_luna/configuration/org.eclipse.osgi/950/0/.cp/templates/common-templates/.settings/org.eclipse.wst.jsdt.ui.superType.name
+
+!ENTRY org.nodeclipse.ui 1 0 2015-10-03 14:24:25.454
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=/Volumes/MacSSHD/Development_IDE_Environments/eclipse_ee_luna/configuration/org.eclipse.osgi/950/0/.cp/templates/common-templates/README.md
+
+!ENTRY org.nodeclipse.ui 1 0 2015-10-03 14:24:25.502
+!MESSAGE templateRoot: /Volumes/MacSSHD/Development_IDE_Environments/eclipse_ee_luna/configuration/org.eclipse.osgi/950/0/.cp/templates/tern-node
+
+!ENTRY org.nodeclipse.ui 1 0 2015-10-03 14:24:25.503
+!MESSAGE RelativityFileSystemStructureProvider.getContents() called. elemnt=/Volumes/MacSSHD/Development_IDE_Environments/eclipse_ee_luna/configuration/org.eclipse.osgi/950/0/.cp/templates/tern-node/.tern-project
