@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "opofund.paypal.opohack.com.opportunityfund"
+        applicationId "com.opohack.opportunityfund.paypal"
         minSdkVersion 16
         targetSdkVersion 23
         versionCode 1

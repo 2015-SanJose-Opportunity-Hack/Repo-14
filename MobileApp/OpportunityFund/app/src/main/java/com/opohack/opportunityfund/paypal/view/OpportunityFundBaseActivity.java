@@ -8,6 +8,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -35,11 +36,14 @@ public class OpportunityFundBaseActivity extends AppCompatActivity {
     private NavigationView mNavigationView;
     //private ListView mSliderList;
 
+  //  private OpportunityFundApplication mApplication;
+
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
 
     private LinearLayout mContentLayout;
 
+    private Toolbar toolbar;
     private RequestQueue mRequestQueue;
 
     private boolean bErrorDialogShowing = false;
@@ -72,6 +76,11 @@ public class OpportunityFundBaseActivity extends AppCompatActivity {
     public void setContentView(int layoutResID) {
         super.setContentView(R.layout.activity_opportunity_fund_base);
 
+        // Initializing Toolbar and setting it as the actionbar
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+
         // Add inflated UI to container
         mContentLayout = (LinearLayout) findViewById(R.id.content_layout);
 
@@ -88,7 +97,7 @@ public class OpportunityFundBaseActivity extends AppCompatActivity {
 
         mContentLayout.addView(oView);
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
+       // if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
             mTitle = mDrawerTitle = getTitle();
             mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
@@ -127,14 +136,15 @@ public class OpportunityFundBaseActivity extends AppCompatActivity {
             //mSliderList.setOnItemClickListener(new DrawerItemClickListener());
 
             // enable ActionBar app icon to behave as action to toggle nav drawer
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setHomeButtonEnabled(true);
+           // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+           // getSupportActionBar().setHomeButtonEnabled(true);
 
             // ActionBarDrawerToggle ties together the the proper interactions
             // between the sliding drawer and the action bar app icon
             mDrawerToggle = new ActionBarDrawerToggle(
                     this,                   // host Activity
                     mDrawerLayout,
+                    toolbar,
                     R.string.drawer_open,   // "open drawer" description for accessibility
                     R.string.drawer_close   // "close drawer" description for accessibility // DrawerLayout object
             ) {
@@ -145,12 +155,13 @@ public class OpportunityFundBaseActivity extends AppCompatActivity {
 
                 public void onDrawerOpened(View drawerView) {
                     getSupportActionBar().setTitle(mDrawerTitle);
+                    
                     invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
                 }
             };
             mDrawerLayout.setDrawerListener(mDrawerToggle);
             mDrawerToggle.syncState();
-        }
+        //}
     }
 
     /**
@@ -214,7 +225,7 @@ public class OpportunityFundBaseActivity extends AppCompatActivity {
 
     public RequestQueue getRequestQueue() {
         if (mRequestQueue == null) {
-            mRequestQueue = Volley.newRequestQueue(OpportunityFundApplication.getInstance());
+            mRequestQueue = Volley.newRequestQueue(OpoFundApplication.getInstance());
         }
 
         return mRequestQueue;

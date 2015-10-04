@@ -3,9 +3,8 @@ package com.opohack.opportunityfund.paypal.view;
 
 import android.app.Application;
 
-public class OpportunityFundApplication extends Application {
 
-    public static final String TAG = OpportunityFundApplication.class.getSimpleName();
+public class OpoFundApplication extends Application {
 
     private static Application mInstance;
 
@@ -15,10 +14,6 @@ public class OpportunityFundApplication extends Application {
         mInstance = this;
     }
 
-    /**
-     *
-     * @return Opportunity Fund Application context
-     */
     public synchronized static Application getInstance() {
         return mInstance;
     }

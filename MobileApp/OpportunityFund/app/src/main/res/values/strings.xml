@@ -18,5 +18,6 @@
     <string name="err_msg_email">Enter valid email address</string>
     <string name="err_msg_password">Enter the password</string>
     <string name="title_activity_opportunity_fund_base">OpportunityFundBaseActivity</string>
+    <string name="title_activity_opo_fund_application">OpoFundApplication</string>
 
 </resources>
