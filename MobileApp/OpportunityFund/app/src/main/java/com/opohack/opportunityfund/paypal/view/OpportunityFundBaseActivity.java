@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,9 +14,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -32,7 +32,9 @@ public class OpportunityFundBaseActivity extends AppCompatActivity {
 
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
-    private ListView mSliderList;
+
+    private NavigationView mNavigationView;
+    //private ListView mSliderList;
 
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
@@ -90,14 +92,40 @@ public class OpportunityFundBaseActivity extends AppCompatActivity {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
             mTitle = mDrawerTitle = getTitle();
             mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-            mSliderList = (ListView) findViewById(R.id.slider_list);
+
+            //Initializing NavigationView
+            mNavigationView = (NavigationView) findViewById(R.id.navigation_view);
+
+            mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
+
+                @Override
+                public boolean onNavigationItemSelected(MenuItem menuItem) {
+
+                    //Checking if the item is in checked state or not, if not make it in checked state
+                    if(menuItem.isChecked()) menuItem.setChecked(false);
+                    else menuItem.setChecked(true);
+
+                    //Closing drawer on item click
+                    mDrawerLayout.closeDrawers();
+
+                    //Check to see which item was being clicked and perform appropriate action
+                    switch (menuItem.getItemId()){
+
+                        default:
+                            Toast.makeText(getApplicationContext(),"Thank you",Toast.LENGTH_SHORT).show();
+                            return true;
+
+                    }
+                }
+            });
+            //mSliderList = (ListView) findViewById(R.id.slider_list);
 
             // set a custom shadow that overlays the main content when the drawer opens
             // mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
 
             // set up the drawer's list view with items and click listener
-            mSliderList.setAdapter(SliderMenuListAdapter.getInstance(this));
-            mSliderList.setOnItemClickListener(new DrawerItemClickListener());
+            //mSliderList.setAdapter(SliderMenuListAdapter.getInstance(this));
+            //mSliderList.setOnItemClickListener(new DrawerItemClickListener());
 
             // enable ActionBar app icon to behave as action to toggle nav drawer
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -129,7 +157,7 @@ public class OpportunityFundBaseActivity extends AppCompatActivity {
     /**
      *  The click listener for ListView in the slider menu
      */
-    private class DrawerItemClickListener implements ListView.OnItemClickListener {
+   /* private class DrawerItemClickListener implements ListView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             if(mSliderList != null && mDrawerLayout != null) {
@@ -140,7 +168,7 @@ public class OpportunityFundBaseActivity extends AppCompatActivity {
 
             }
         }
-    }
+    }*/
 
     /**
      * Handles slider click. Open appropriate activity as per clicked slider list item position

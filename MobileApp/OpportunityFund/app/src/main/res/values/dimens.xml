@@ -2,4 +2,18 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Form related dimensions -->
+    <dimen name="form_heading_font_size">20sp</dimen>
+    <dimen name="form_sub_heading_font_size">12sp</dimen>
+    <dimen name="form_sub_warning_font_size">10sp</dimen>
+    <dimen name="horizontal_child_layout_vertical_padding">12dp</dimen>
+    <dimen name="form_field_label_font_size">15sp</dimen>
+
+    <!-- Bottom buttons -->
+    <dimen name="button_left_padding">2dp</dimen>
+
+    <!-- List view padding -->
+    <dimen name="list_item_vertical_margin">20dp</dimen>
+    <dimen name="list_item_horizontal_margin">5dp</dimen>
 </resources>
