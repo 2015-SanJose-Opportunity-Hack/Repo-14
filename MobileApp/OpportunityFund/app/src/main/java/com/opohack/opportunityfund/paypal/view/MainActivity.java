@@ -2,7 +2,7 @@ package com.opohack.opportunityfund.paypal.view;
 
 import android.os.Bundle;
 
-import opofund.paypal.opohack.com.opportunityfund.R;
+import com.opohack.opportunityfund.paypal.R;
 
 public class MainActivity extends OpportunityFundBaseActivity {
 

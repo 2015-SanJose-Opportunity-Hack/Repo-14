@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import opofund.paypal.opohack.com.opportunityfund.R;
+import com.opohack.opportunityfund.paypal.R;
 
 /**
  * Created by vipulkanade on 5/12/15.
