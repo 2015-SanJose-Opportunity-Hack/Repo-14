@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -155,7 +156,8 @@ public class OpportunityFundBaseActivity extends AppCompatActivity {
 
                 public void onDrawerOpened(View drawerView) {
                     getSupportActionBar().setTitle(mDrawerTitle);
-                    
+                    InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
                     invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
                 }
             };

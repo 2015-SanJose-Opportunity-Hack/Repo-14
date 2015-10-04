@@ -16,45 +16,105 @@
             android:orientation="vertical"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
+            android:paddingBottom="20dp"
             android:paddingTop="60dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/loan_type_prompt"
+                android:id="@+id/textView" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner"
+                android:entries="@array/loan_arrays"
+                android:prompt="@string/loan_type_prompt" />
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/input_layout_name"
+                android:paddingTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/input_name"
+                    android:id="@+id/input_amount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:singleLine="true"
-                    android:hint="@string/hint_name" />
+                    android:inputType="numberDecimal"
+                    android:hint="Loan Amount"
+                     />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_layout_email"
+                android:id="@+id/input_layout_term"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/input_email"
+                    android:id="@+id/input_term"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:hint="@string/hint_email" />
+                    android:inputType="number"
+                    android:hint="Term (months)" />
             </android.support.design.widget.TextInputLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:paddingTop="20dp"
+                android:text="@string/loan_freq_prompt"
+                android:id="@+id/textViewfreq" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerfreq"
+                android:entries="@array/loan_freq_arrays"
+                android:prompt="@string/loan_freq_prompt" />
+
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_layout_password"
+                android:id="@+id/input_layout_down_payment"
+                android:paddingTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/input_password"
+                    android:id="@+id/input_down_payment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:hint="@string/hint_password" />
+                    android:inputType="numberDecimal"
+                    android:hint="Down Payment" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_loan_fee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/input_loan_fee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:hint="Loan Fee" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/input_rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:hint="Rate" />
             </android.support.design.widget.TextInputLayout>
 
             <Button android:id="@+id/btn_signup"
@@ -63,6 +123,7 @@
                 android:text="@string/calculate"
                 android:background="@color/primary"
                 android:layout_marginTop="40dp"
+                android:padding="10dp"
                 android:textColor="@android:color/white"/>
 
         </LinearLayout>

@@ -20,4 +20,19 @@
     <string name="title_activity_opportunity_fund_base">OpportunityFundBaseActivity</string>
     <string name="title_activity_opo_fund_application">OpoFundApplication</string>
 
+    <string name="loan_type_prompt">Choose a Loan Type</string>
+
+    <string-array name="loan_arrays">
+        <item>Vehicle</item>
+        <item>Working Spacecap</item>
+        <item>TLS/ Expantion</item>
+    </string-array>
+
+    <string name="loan_freq_prompt">Frequency</string>
+
+    <string-array name="loan_freq_arrays">
+        <item>Monthly</item>
+        <item>Weekly</item>
+        <item>BiWeekly</item>
+    </string-array>
 </resources>
