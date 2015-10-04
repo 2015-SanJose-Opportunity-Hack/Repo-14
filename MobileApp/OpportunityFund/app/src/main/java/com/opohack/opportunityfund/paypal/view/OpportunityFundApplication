@@ -1,0 +1,25 @@
+package com.opohack.opportunityfund.paypal.view;
+
+
+import android.app.Application;
+
+public class OpportunityFundApplication extends Application {
+
+    public static final String TAG = OpportunityFundApplication.class.getSimpleName();
+
+    private static Application mInstance;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        mInstance = this;
+    }
+
+    /**
+     *
+     * @return Opportunity Fund Application context
+     */
+    public synchronized static Application getInstance() {
+        return mInstance;
+    }
+}

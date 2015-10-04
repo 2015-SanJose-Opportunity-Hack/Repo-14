@@ -1,9 +1,11 @@
-package opofund.paypal.opohack.com.opportunityfund;
+package com.opohack.opportunityfund.paypal.view;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import opofund.paypal.opohack.com.opportunityfund.R;
 
 public class MainActivity extends AppCompatActivity {
 
