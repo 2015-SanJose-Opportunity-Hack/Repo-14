@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;bower_components&apos; to &apos;Opportunity_Fund_Team_14&apos;" description="Move &apos;bower_components&apos; to &apos;Opportunity_Fund_Team_14&apos;" destination="/Opportunity_Fund_Team_14" element1="node_modules/bower_components" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1443917535505" updateReferences="true"/>
+</session>

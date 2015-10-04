@@ -19,8 +19,22 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/routes',  express.static(__dirname + '/routes'));
+app.use(app.router);
+app.use(function(req, res, next) {
+	res.header('Access-Control-Allow-Origin', 'http://localhost:7272');
+	res.header('Access-Control-Allow-Headers',
+			'Origin, X-Requested-With, Content-Type, Accept');
+	res.header("Access-Control-Allow-Credentials", true);
+	if (req.method === "OPTIONS") {
+		console.log("Client options");
+		res.end('');
+	} else {
+		next();
+	}
+});
+
 
 // development only
 if ('development' == app.get('env')) {
