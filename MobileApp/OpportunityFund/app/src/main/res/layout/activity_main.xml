@@ -60,7 +60,7 @@
             <Button android:id="@+id/btn_signup"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/btn_sign_up"
+                android:text="@string/calculate"
                 android:background="@color/primary"
                 android:layout_marginTop="40dp"
                 android:textColor="@android:color/white"/>
