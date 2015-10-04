@@ -21,6 +21,8 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/routes',  express.static(__dirname + '/routes'));
+app.use('/bower_components',  express.static(__dirname + '/bower_components'));
+app.use('/node_modules',  express.static(__dirname + '/node_modules'));
 app.use(app.router);
 app.use(function(req, res, next) {
 	res.header('Access-Control-Allow-Origin', 'http://localhost:7272');

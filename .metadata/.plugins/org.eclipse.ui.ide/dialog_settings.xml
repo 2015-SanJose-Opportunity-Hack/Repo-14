@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Volumes/MacSSHD/Developer_Projects/Projects/CMPE 273 - Prof Shim/Projects/Lab /LinkedInFrontEnd_RabbitMQ"/>
+			<item value="/Volumes/MacSSHD/Developer_Projects/Projects/CMPE 273 - Prof Shim/Labs/Lab#2/Lab2-Vipul_Kanade/LinkedIn_Node_Server_Client"/>
+			<item value="/Volumes/MacSSHD/Developer_Projects/Projects/CMPE 273 - Prof Shim/LinkedIn Code BackUp/Code BackUp LinkedInClient/LinkedInClient_Working_session_cookie_03_04_2015"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+</section>

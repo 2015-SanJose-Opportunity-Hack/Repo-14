@@ -1,43 +1,87 @@
-var number_1, number_2, math_Operator, request;
+var email, paswd;
+var serverBaseURL = 'http://10.0.0.208:7272/';
+var linkedInApp = angular.module('linkedInApp', ['ngMaterial','ngCookies']);
 
-var demoApp = angular.module('demoApp', [ 'ui.bootstrap' ]);
-
-function SimpleController($scope, $http, $location) {
-	$scope.clicked = function() {
-		number_1 = $scope.number1;
-		number_2 = $scope.number2;
-		math_Operator = $scope.radioModel;
-		if (!isNaN(number_1) && !isNaN(number_2)) {
-			if ((number_2 === 0) && (math_Operator === "Division")) {
-				alert("'0' cannot be a divisor");
-			} else {
-				request = {
-					method : 'POST',
-					url : 'http://localhost:8080/calculator',
-					data : {
-						"firstNumber" : number_1,
-						"secondNumber" : number_2,
-						"operation" : math_Operator
-					},
-				}
-				$http(request).success(function(response) {
-					$scope.answer = response.finalValue;
-				}).error(function(err) {
-					alert("Error");
+function LoginController($scope, $http, $location, $window, $cookies, $mdDialog) {
+	if ($window.localStorage.token) {
+		$window.location = '/successLogin';
+	} else {
+		$scope.login = function() {
+			email = $scope.email;
+			paswd = $scope.password;
+			if (email && paswd) {
+				var req = {
+						method : 'POST',
+						url : '/login',
+						data : {
+							"email" : email,
+							"password" : paswd
+						},
+						withCredentials: true
+					};
+					
+					$http(req).success(function(response) {
+						if (response.status === true) {
+							var d = new Date(response.lastlog);					
+							$window.localStorage.token = response.token;
+							$window.localStorage.lastLog = d;
+							$window.localStorage.userID = response.userID;
+							$window.location = '/successLogin';
+						} else {
+							$window.location = '/login';
+						}	
+					}).error(function(error) {
+						alert("Error Logging In");
 				});
 			}
-		} else {
-			if (isNaN(number_1)) {
-				if (isNaN(number_2)) {
-					alert("Value of First and Second Operand Must be Number");
-				} else {
-					alert("Value of First Operand Must be Number");
-				}
-			} else if (isNaN(number_2)) {
-				alert("Value of Second Operand Must be Number");
-			}
-		}
-	};
+		};
+	}
 }
 
-demoApp.controller('SimpleController', SimpleController);
+function signUpController($scope, $http, $location, $window, $cookies) {
+	var firstName, lastName, emailID, password;
+	if ($window.localStorage.token) {
+		$window.location = '/successLogin';
+	} else {
+		$scope.signUpSubmit = function() {
+			firstName = $scope.firstName;
+			lastName = $scope.lastName;
+			emailID =  $scope.newUserEmail;
+			password = $scope.newUserPassword;
+			
+			if (firstName && lastName && emailID && password) {
+				var req = {
+						method : 'POST',
+						url : '/signUp',
+						data : {
+							"name" : firstName + " " +lastName,
+							"emailID": emailID,
+							"password": password,
+						},
+						withCredentials: true
+					};
+				
+				$http(req).success(function(response) {
+					if (response.status === true) {
+						if (response.userAlreadyPresent === true) {
+							alert("Email-ID already signed up.\nPlease enter Different Email ID \nelse Login with existing Email ID");
+						} else {
+							alert("User Signed Up Successfull\nPlease Login to Proceed");
+						}
+					} else {
+						alert("Issue in Sign Up");
+					} 
+					$window.location = '/login';	
+				}).error(function(error) {
+					alert("Error Signing Up");
+				});
+			}
+		};
+	}
+}
+
+linkedInApp.controller('signInController', LoginController).config( function($mdThemingProvider){
+    // Configure a dark theme with primary foreground yellow
+    $mdThemingProvider.theme('default');
+  });
+linkedInApp.controller('signUpController', signUpController);

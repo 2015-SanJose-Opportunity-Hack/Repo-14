@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+
+
+.linked-in-image-padding {
+	padding-left: 150px;
+}
+
+.content {
+	margin: 0px 30px 30px 90px;
+}
+
+.form-content {
+	margin: 0px 30px 30px 90px;
+}
+
+.login-form {
+	margin: 0px 0px 0px 5px;
+}
+
+.image-content {
+	margin: 40px 10px 30px 20px;
+}
+
+#email-id {
+	padding : 0px 15px 0px 15px;
+}
+
+#sign-in-button {
+	margin: 0px 10px 0px 20px;
+	padding-right: 25px;
+}
+
+#sign-up-button {
+	padding:10px 20px 10px 20px;
+}
+
+#tp-text {
+	padding-left:450px;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="linkedInApp">
+<head>
+<script src="../routes/angular.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="../node_modules/angular-material/angular-material.min.css">
+<link href="../routes/css/loginpage.css" rel="stylesheet">
+<script src="../node_modules/angular-animate/angular-animate.min.js"></script>
+<script src="../node_modules/angular-aria/angular-aria.min.js"></script>
+<script src="../node_modules/angular-material/angular-material.min.js"></script>
+<script src="../angular_controller/js/loginjs.js"></script>
+<script src="../routes/angular-cookies.js"></script>
+<meta charset="UTF-8">
+<title>LinkedIn</title>
+</head>
+<body>
+	<div layout="column">
+		<div class="top-navbar" ng-controller="signInController">
+			<md-toolbar layout="row">
+			<h1 class="md-toolbar-tools linked-in-image-padding"
+				layout-align-gt-sm="left">
+				<img
+					src="https://static.licdn.com/scds/common/u/img/logos/logo_132x32_2.png"
+					alt="LinkedIn" class="logo" height="32" width="132">
+			</h1>
+			<form name="LoginForm" layout-align-gt-sm="center">
+			<md-content class="md-toolbar-tools">
+			<md-input-container> <label>Email</label> <input id="email-id" required
+				ng-model="email" type="email"> </md-input-container> <md-input-container>
+			<label>Password</label> <input required ng-model="password" id="email-id"
+				type="password"> </md-input-container> <md-button type="submit" ng-click="login()"
+				class="md-primary md-raised" id="sign-in-button">Login</md-button> </md-content></form></md-toolbar>
+		</div>
+	</div>
+
+	<div  ng-controller="signUpController" layout="column" class="content">
+		<h1 id="tp-text">Be great at what you do.</h1>
+		<md-content layout="row" class="md-padding"> <img class="image-content"
+			src="http://blogs.houstonpress.com/artattack/1217linkedin.jpg"
+			height="360" width="570">
+		<form name="userForm" class="form-content">
+			<h1>Get started – it’s free.</h1>
+			<h3>Registration takes less than 2 minutes</h3>
+			<div layout layout-sm="column">
+				<md-input-container flex> <label>First
+					Name</label> <input ng-model="firstName"
+					required placeholder="First Name"> </md-input-container>
+				<md-input-container flex> <label>Last
+					Name</label> <input ng-model="lastName" required placeholder="Last Name"> </md-input-container>
+			</div>
+			<md-input-container flex> <label>Email</label> <input
+				required ng-model="newUserEmail" type="email" placeholder="abc@abc.com"> </md-input-container flex>
+			<md-input-container> <label>Password</label> <input required
+				ng-model="newUserPassword" type="password"> </md-input-container>
+			<md-button layout-align="right" class="md-primary md-raised"
+				id="sign-up-button" type="submit" ng-click="signUpSubmit()">Sign Up</md-button>
+		</form>
+		</md-content>
+	</div>
+</body>
+</html>

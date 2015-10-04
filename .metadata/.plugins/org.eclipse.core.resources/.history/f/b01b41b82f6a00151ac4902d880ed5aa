@@ -1,0 +1,55 @@
+<!doctype html>
+<html ng-app="demoApp">
+<head>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<title>Calculator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div class="jumbotron">
+		<h1>Calculator App</h1>
+		<p>A simple calculator which performs basic math operations such
+			as Addition, Subtraction Multiplication, Division designed using
+			Angular.js and bootstrap with backend as a Node.js server</p>
+	</div>
+	<div class="container" ng-controller="SimpleController">
+		<div class="row">
+
+			<div class="col-sm-4" style="background-color: lavender;">
+				Number 1: <input type="text" ng-model="number1" />
+			</div>
+
+			<div class="col-sm-4" style="background-color: lavenderblush;">
+				Number 2: <input type="text" ng-model="number2" />
+			</div>
+			<br />
+		</div>
+
+		<br /> <br />
+		<pre>You've Selected {{radioModel}}</pre>
+		<div class="btn-group" ng-click="clicked()">
+			<label class="btn btn-success" ng-model="radioModel"
+				btn-radio="'Addition'">Addition</label> <label
+				class="btn btn-success" ng-model="radioModel"
+				btn-radio="'Substraction'">Subtraction</label> <label
+				class="btn btn-success" ng-model="radioModel"
+				btn-radio="'Multiplication'">Multiplication</label> <label
+				class="btn btn-success" ng-model="radioModel" btn-radio="'Division'">Division</label>
+		</div>
+
+		<div>
+			<h1 class="text-success">Your Answer is : {{answer}}</h1>
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.js"></script>
+	<script src="../routes/calculatorLoan.js"></script>
+</body>
+</html>
