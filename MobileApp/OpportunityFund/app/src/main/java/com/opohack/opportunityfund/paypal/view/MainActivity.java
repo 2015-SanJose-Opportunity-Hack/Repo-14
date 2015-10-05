@@ -1,5 +1,6 @@
 package com.opohack.opportunityfund.paypal.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,7 +18,6 @@ import com.opohack.opportunityfund.paypal.R;
 import com.opohack.opportunityfund.paypal.model.CalculatedLoan;
 import com.opohack.opportunityfund.paypal.model.DataModelManager;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -84,18 +84,15 @@ public class MainActivity extends OpportunityFundBaseActivity implements Adapter
                         @Override
                         public void onResponse(JSONObject response) {
                             Log.e("Volley Success", response.toString());
-                            JSONArray oResponse = response.optJSONArray("message");
+                            JSONObject oResponse = response.optJSONObject("message");
+                            //Log.e("Whatevr", oResponseObj.toString());
+                            //JSONArray oResponse = response.optJSONArray("message");
                             DataModelManager.getInstance().getCalculatedLoanList().clear();
-                            for (int i =0; i < oResponse.length(); i++) {
-                                try {
-                                    CalculatedLoan calculatedLoan = new CalculatedLoan(oResponse.getJSONObject(i));
-                                    DataModelManager.getInstance().getCalculatedLoanList().add(calculatedLoan);
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
 
+                            CalculatedLoan calculatedLoan = new CalculatedLoan(oResponse);
+                            DataModelManager.getInstance().setCalculatedLoan(calculatedLoan);
 
-                            }
+                            displayContent();
 
                         }
                     }, new Response.ErrorListener() {
@@ -107,11 +104,18 @@ public class MainActivity extends OpportunityFundBaseActivity implements Adapter
                         }
                     });
                     mInstance.addToRequestQueue(jsonObjectRequest);
+
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
                 break;
         }
+    }
+
+    private void displayContent() {
+        Intent o = new Intent(this, DisplayResponse.class);
+        startActivity(o);
     }
 }

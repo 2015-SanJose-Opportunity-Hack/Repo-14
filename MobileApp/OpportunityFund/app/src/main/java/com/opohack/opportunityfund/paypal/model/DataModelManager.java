@@ -11,6 +11,16 @@ public class DataModelManager {
     private static DataModelManager mInstance;
     private static final Object obj = new Object();
 
+    public CalculatedLoan getCalculatedLoan() {
+        return calculatedLoan;
+    }
+
+    public void setCalculatedLoan(CalculatedLoan calculatedLoan) {
+        this.calculatedLoan = calculatedLoan;
+    }
+
+    private CalculatedLoan calculatedLoan;
+
     public List<CalculatedLoan> getCalculatedLoanList() {
         return mCalculatedLoanList;
     }

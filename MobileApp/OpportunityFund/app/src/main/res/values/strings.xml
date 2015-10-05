@@ -35,4 +35,5 @@
         <item>Weekly</item>
         <item>BiWeekly</item>
     </string-array>
+    <string name="title_activity_display_response">Display Response</string>
 </resources>

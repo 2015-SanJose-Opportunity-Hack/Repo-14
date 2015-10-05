@@ -34,7 +34,7 @@
         <activity
             android:name=".view.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,7 +45,15 @@
             android:name=".view.OpportunityFundBaseActivity"
             android:label="@string/title_activity_opportunity_fund_base" >
         </activity>
-
+        <activity
+            android:name=".view.DisplayResponse"
+            android:label="@string/title_activity_display_response"
+            android:parentActivityName=".view.OpportunityFundBaseActivity"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.opohack.opportunityfund.paypal.view.OpportunityFundBaseActivity" />
+        </activity>
     </application>
 
 </manifest>
